@@ -1,20 +1,20 @@
 [
   {
-    "sourceId": "voyage-log-sync-demo-1",
-    "source": "sample-source",
-    "observedAt": "2026-11-16T09:00:00Z",
-    "label": "航行记录",
+    "sourceId": "1",
+    "source": "航次记录接收器",
+    "observedAt": "2026-11-16T08:00:00Z",
+    "label": "position",
     "attributes": {
-      "sample": true
-    }
-  },
-  {
-    "sourceId": "voyage-log-sync-demo-2",
-    "source": "sample-source",
-    "observedAt": "2026-11-16T09:05:00Z",
-    "label": "航行记录 2",
-    "attributes": {
-      "sample": true
+      "voyageId": "V-17",
+      "sequence": 1,
+      "kind": "position",
+      "deviceTime": "2026-11-16T08:00:00Z",
+      "offsetSeconds": 80,
+      "value": {
+        "latitude": 10,
+        "longitude": 20
+      },
+      "signature": "f8e429adf5f5e81e3f06199db2bb6cca7309e20fda9ef6310e567c72c0bb536c"
     }
   }
 ]
