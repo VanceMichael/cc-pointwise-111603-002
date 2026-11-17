@@ -1,0 +1,159 @@
+{
+  "stages": {
+    "opening": {
+      "routes": {
+        "/voyages/V-20/logs?after=0": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-20",
+                "sequence": 1,
+                "kind": "position",
+                "deviceTime": "2026-11-16T08:05:00Z",
+                "offsetSeconds": 12,
+                "value": {
+                  "latitude": 1,
+                  "longitude": 2
+                },
+                "signature": "2da32dc252edc52042655143214fe1a8429795b3b69d0ec02686c6bc7141c5cc"
+              }
+            ],
+            "next": "/voyages/V-20/logs?after=1"
+          },
+          "etag": "\"v20-opening-1\""
+        },
+        "/voyages/V-20/logs?after=1": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-20",
+                "sequence": 4,
+                "kind": "alarm",
+                "deviceTime": "2026-11-16T08:10:00Z",
+                "offsetSeconds": 15,
+                "value": {
+                  "rpm": 1200
+                },
+                "signature": "eb44d29bde1ceafe71b822a6b167a668eccb0b71fb87663443f06d136c83f122"
+              }
+            ],
+            "next": null
+          },
+          "etag": "\"v20-opening-2\""
+        },
+        "/voyages/V-20/manifest": {
+          "contentType": "application/json",
+          "body": {
+            "voyageId": "V-20",
+            "through": 4,
+            "noRecord": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "backfill": {
+      "routes": {
+        "/voyages/V-20/logs?after=0": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-20",
+                "sequence": 1,
+                "kind": "position",
+                "deviceTime": "2026-11-16T08:05:00Z",
+                "offsetSeconds": 12,
+                "value": {
+                  "latitude": 1,
+                  "longitude": 2
+                },
+                "signature": "2da32dc252edc52042655143214fe1a8429795b3b69d0ec02686c6bc7141c5cc"
+              },
+              {
+                "voyageId": "V-20",
+                "sequence": 3,
+                "kind": "engine",
+                "deviceTime": "2026-11-16T08:00:00Z",
+                "offsetSeconds": 30,
+                "value": {
+                  "rpm": 900
+                },
+                "signature": "c7892c1ff8bfa631b83f37d9812cf47e6d6d3ac7e59eaa9ac7fadb552347fb52"
+              }
+            ],
+            "next": "/voyages/V-20/logs?after=3"
+          },
+          "etag": "\"v20-backfill-1\""
+        },
+        "/voyages/V-20/logs?after=3": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-20",
+                "sequence": 4,
+                "kind": "alarm",
+                "deviceTime": "2026-11-16T08:10:00Z",
+                "offsetSeconds": 15,
+                "value": {
+                  "rpm": 1200
+                },
+                "signature": "eb44d29bde1ceafe71b822a6b167a668eccb0b71fb87663443f06d136c83f122"
+              }
+            ],
+            "next": null
+          },
+          "etag": "\"v20-backfill-2\""
+        },
+        "/voyages/V-20/manifest": {
+          "contentType": "application/json",
+          "body": {
+            "voyageId": "V-20",
+            "through": 4,
+            "noRecord": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "corrupted": {
+      "routes": {
+        "/voyages/V-20/logs?after=0": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-20",
+                "sequence": 3,
+                "kind": "engine",
+                "deviceTime": "2026-11-16T08:00:00Z",
+                "offsetSeconds": 30,
+                "value": {
+                  "rpm": 900
+                },
+                "signature": "bad-signature"
+              }
+            ],
+            "next": null
+          },
+          "etag": "\"v20-corrupted\""
+        },
+        "/voyages/V-20/manifest": {
+          "contentType": "application/json",
+          "body": {
+            "voyageId": "V-20",
+            "through": 4,
+            "noRecord": [
+              2
+            ]
+          }
+        }
+      }
+    }
+  }
+}

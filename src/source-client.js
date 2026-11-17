@@ -10,6 +10,11 @@ export class SourceClient {
     if (address.origin !== this.baseUrl.origin) throw new Error('source origin changed');
     const response = await fetch(address, { signal: AbortSignal.timeout(2000) });
     if (!response.ok) throw new Error(`source ${response.status}: ${path}`);
-    return { text: await response.text(), contentType: response.headers.get('content-type') };
+    return {
+      text: await response.text(),
+      contentType: response.headers.get('content-type'),
+      etag: response.headers.get('etag'),
+      status: response.status,
+    };
   }
 }
