@@ -69,6 +69,96 @@
         }
       }
     },
+    "paged": {
+      "routes": {
+        "/voyages/V-17/logs?after=0": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-17",
+                "sequence": 1,
+                "kind": "position",
+                "deviceTime": "2026-11-16T08:00:00Z",
+                "offsetSeconds": 80,
+                "value": {
+                  "latitude": 10,
+                  "longitude": 20
+                },
+                "signature": "f8e429adf5f5e81e3f06199db2bb6cca7309e20fda9ef6310e567c72c0bb536c"
+              }
+            ],
+            "next": "/voyages/V-17/logs?after=1"
+          },
+          "etag": "\"paged-1\""
+        },
+        "/voyages/V-17/logs?after=1": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-17",
+                "sequence": 3,
+                "kind": "engine",
+                "deviceTime": "2026-11-16T09:00:00Z",
+                "offsetSeconds": 90,
+                "value": {
+                  "rpm": 1100
+                },
+                "signature": "148b0860a48aa6161949941cc1043dae67f4c5d4b6aa2304545c7c6f1eaa50be"
+              }
+            ],
+            "next": null
+          },
+          "etag": "\"paged-2\""
+        },
+        "/voyages/V-17/manifest": {
+          "contentType": "application/json",
+          "body": {
+            "voyageId": "V-17",
+            "through": 3,
+            "noRecord": [
+              2
+            ]
+          }
+        }
+      }
+    },
+    "revised": {
+      "routes": {
+        "/voyages/V-17/logs?after=0": {
+          "contentType": "application/json",
+          "body": {
+            "items": [
+              {
+                "voyageId": "V-17",
+                "sequence": 1,
+                "kind": "position",
+                "deviceTime": "2026-11-16T08:05:00Z",
+                "offsetSeconds": 80,
+                "value": {
+                  "latitude": 10.5,
+                  "longitude": 20.5
+                },
+                "signature": "1a4845533ee03f4d40e56fae38d008d8f835391ed01592d4887a22120806cfb6"
+              }
+            ],
+            "next": null
+          },
+          "etag": "\"revised\""
+        },
+        "/voyages/V-17/manifest": {
+          "contentType": "application/json",
+          "body": {
+            "voyageId": "V-17",
+            "through": 3,
+            "noRecord": [
+              2
+            ]
+          }
+        }
+      }
+    },
     "corrupted": {
       "routes": {
         "/voyages/V-17/logs?after=0": {
